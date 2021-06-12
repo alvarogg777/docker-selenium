@@ -8,9 +8,9 @@ resources:
 patches:
 - target:
     kind: Deployment
-      patch: |-
-        - op: add
-          path: /spec/template/spec/imagePullSecrets/-
-          value:
-            name: regcred
+  patch: |-
+    - op: add
+      path: /spec/template/spec/imagePullSecrets/-
+      value:
+        name: regcred
 namespace: selenium-system
