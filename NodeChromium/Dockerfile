@@ -2,8 +2,8 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM seleniarm/node-base:4.0.0-beta-2-20210319
-LABEL authors=rows
+FROM alvarogg777/node-base:4.0.0-beta-4-20210610
+LABEL authors=SeleniumHQ
 
 USER root
 
@@ -13,7 +13,7 @@ USER root
 #============================================
 RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >> /etc/apt/sources.list \
   && apt-get update -qqy \
-  && apt-get -qqy install chromium=89.0.4389.82-1 \
+  && apt-get -qqy install chromium=90.0.4430.212-1 \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 #=================================
@@ -27,6 +27,6 @@ RUN /opt/bin/wrap_chromium_binary
 #============================================
 RUN apt-get update -qqy \
   && apt-get -qqy install chromium-driver \
-  && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/* && echo "chromium" >> /opt/selenium/browser_name
 
 USER 1200

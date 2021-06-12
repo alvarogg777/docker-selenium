@@ -24,17 +24,17 @@ if [ ! -z "$SE_OPTS" ]; then
   echo "Appending Selenium options: ${SE_OPTS}"
 fi
 
-if [ ! -z "$SE_SESSION_QUEUER_HOST" ]; then
-  echo "Using SE_SESSION_QUEUER_HOST: ${SE_SESSION_QUEUER_HOST}"
-  HOST_CONFIG="--host ${SE_SESSION_QUEUER_HOST}"
+if [ ! -z "$SE_SESSION_QUEUE_HOST" ]; then
+  echo "Using SE_SESSION_QUEUE_HOST: ${SE_SESSION_QUEUE_HOST}"
+  HOST_CONFIG="--host ${SE_SESSION_QUEUE_HOST}"
 fi
 
-if [ ! -z "$SE_SESSION_QUEUER_PORT" ]; then
-  echo "Using SE_SESSION_QUEUER_PORT: ${SE_SESSION_QUEUER_PORT}"
-  PORT_CONFIG="--port ${SE_SESSION_QUEUER_PORT}"
+if [ ! -z "$SE_SESSION_QUEUE_PORT" ]; then
+  echo "Using SE_SESSION_QUEUE_PORT: ${SE_SESSION_QUEUE_PORT}"
+  PORT_CONFIG="--port ${SE_SESSION_QUEUE_PORT}"
 fi
 
-java ${JAVA_OPTS} -jar /opt/selenium/selenium-server.jar sessionqueuer \
+java ${JAVA_OPTS} -jar /opt/selenium/selenium-server.jar sessionqueue \
   --publish-events tcp://"${SE_EVENT_BUS_HOST}":${SE_EVENT_BUS_PUBLISH_PORT} \
   --subscribe-events tcp://"${SE_EVENT_BUS_HOST}":${SE_EVENT_BUS_SUBSCRIBE_PORT} \
   ${HOST_CONFIG} \

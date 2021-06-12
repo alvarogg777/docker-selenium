@@ -57,7 +57,7 @@ fi
 
 java ${JAVA_OPTS} -jar /opt/selenium/selenium-server.jar distributor \
   --sessions-host "${SE_SESSIONS_MAP_HOST}" --sessions-port "${SE_SESSIONS_MAP_PORT}" \
-  --sessionqueuer-host "${SE_SESSION_QUEUER_HOST}" --sessionqueuer-port "${SE_SESSION_QUEUER_PORT}" \
+  --sessionqueue-host "${SE_SESSION_QUEUER_HOST}" --sessionqueue-port "${SE_SESSION_QUEUER_PORT}" \
   --publish-events tcp://"${SE_EVENT_BUS_HOST}":"${SE_EVENT_BUS_PUBLISH_PORT}" \
   --subscribe-events tcp://"${SE_EVENT_BUS_HOST}":"${SE_EVENT_BUS_SUBSCRIBE_PORT}" \
   --bind-bus false \

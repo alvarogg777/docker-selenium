@@ -2,18 +2,18 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM seleniarm/base:4.0.0-beta-2-20210319
-LABEL authors=rows
+FROM alvarogg777/base:4.0.0-beta-4-20210610
+LABEL authors=SeleniumHQ
 
 USER 1200
 
 #========================
-# Selenium SessionQueuer Configuration
+# Selenium SessionQueue Configuration
 #========================
 
 EXPOSE 5559
 
-COPY start-selenium-grid-session-queuer.sh \
+COPY start-selenium-grid-session-queue.sh \
     /opt/bin/
 
-COPY selenium-grid-session-queuer.conf /etc/supervisor/conf.d/
+COPY selenium-grid-session-queue.conf /etc/supervisor/conf.d/

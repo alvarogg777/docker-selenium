@@ -52,7 +52,7 @@ fi
 java ${JAVA_OPTS} -jar /opt/selenium/selenium-server.jar router \
   --sessions-host "${SE_SESSIONS_MAP_HOST}" --sessions-port "${SE_SESSIONS_MAP_PORT}" \
   --distributor-host "${SE_DISTRIBUTOR_HOST}" --distributor-port "${SE_DISTRIBUTOR_PORT}" \
-  --sessionqueuer-host "${SE_SESSION_QUEUER_HOST}" --sessionqueuer-port "${SE_SESSION_QUEUER_PORT}" \
+  --sessionqueue-host "${SE_SESSION_QUEUER_HOST}" --sessionqueue-port "${SE_SESSION_QUEUER_PORT}" \
   --relax-checks true \
   ${HOST_CONFIG} \
   ${PORT_CONFIG} \
