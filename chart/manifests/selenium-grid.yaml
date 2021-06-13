@@ -220,7 +220,8 @@ spec:
       annotations:
         checksum/event-bus-configmap: 3e74d02da87de8f2c78a1f7a003822de18e13182488feb2103af61d649e52fa2
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: selenium-chrome-node
           image: alvarogg777/node-chromium:4.0.0-beta-4-20210610
@@ -267,7 +268,8 @@ spec:
     metadata:
       labels: *distributor_labels
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: selenium-distributor
           image: alvarogg777/distributor:4.0.0-beta-4-20210610
@@ -310,7 +312,8 @@ spec:
     metadata:
       labels: *event_bus_labels
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: selenium-event-bus
           image: alvarogg777/event-bus:4.0.0-beta-4-20210610
@@ -347,7 +350,8 @@ spec:
       annotations:
         checksum/event-bus-configmap: 3e74d02da87de8f2c78a1f7a003822de18e13182488feb2103af61d649e52fa2
     spec:
-      imagePullSecrets: []
+      imagePullSecrets: 
+        - name: regcred
       containers:
         - name: selenium-firefox-node
           image: alvarogg777/node-firefox:4.0.0-beta-4-20210610
@@ -394,7 +398,8 @@ spec:
     metadata:
       labels: *router_labels
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: selenium-router
           image: alvarogg777/router:4.0.0-beta-4-20210610
@@ -456,7 +461,8 @@ spec:
     metadata:
       labels: *session_map_labels
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: selenium-session-map
           image: alvarogg777/sessions:4.0.0-beta-4-20210610
@@ -490,7 +496,8 @@ spec:
     metadata:
       labels: *session_queuer_labels
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: selenium-session-queuer
           image: alvarogg777/session-queue:4.0.0-beta-4-20210610
