@@ -4,7 +4,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: selenium-event-bus-config
-  namespace: selenium-system
   labels:
     app.kubernetes.io/managed-by: helm
     app.kubernetes.io/instance: selenium-grid
@@ -21,7 +20,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-chrome-node
-  namespace: selenium-system
   labels:
     name: selenium-chrome-node
     app.kubernetes.io/managed-by: helm
@@ -43,7 +41,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-distributor
-  namespace: selenium-system
   labels:
     app: selenium-distributor
     app.kubernetes.io/managed-by: helm
@@ -66,7 +63,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-event-bus
-  namespace: selenium-system
   labels:
     app: selenium-event-bus
     app.kubernetes.io/managed-by: helm
@@ -97,7 +93,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-firefox-node
-  namespace: selenium-system
   labels:
     name: selenium-firefox-node
     app.kubernetes.io/managed-by: helm
@@ -119,7 +114,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-opera-node
-  namespace: selenium-system
   labels:
     name: selenium-opera-node
     app.kubernetes.io/managed-by: helm
@@ -141,7 +135,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-router
-  namespace: selenium-system
   labels:
     app: selenium-router
     app.kubernetes.io/managed-by: helm
@@ -164,7 +157,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-session-map
-  namespace: selenium-system
   labels:
     app: selenium-session-map
     app.kubernetes.io/managed-by: helm
@@ -187,7 +179,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: selenium-session-queuer
-  namespace: selenium-system
   labels:
     app: selenium-session-queuer
     app.kubernetes.io/managed-by: helm
@@ -210,7 +201,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-chrome-node
-  namespace: selenium-system
   labels: &chrome_node_labels
     app: selenium-chrome-node
     app.kubernetes.io/name: selenium-chrome-node
@@ -260,7 +250,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-distributor
-  namespace: selenium-system
   labels: &distributor_labels
     app: selenium-distributor
     app.kubernetes.io/name: selenium-distributor
@@ -304,7 +293,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-event-bus
-  namespace: selenium-system
   labels: &event_bus_labels
     app: selenium-event-bus
     app.kubernetes.io/name: selenium-event-bus
@@ -340,7 +328,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-firefox-node
-  namespace: selenium-system
   labels: &firefox_node_labels
     app: selenium-firefox-node
     app.kubernetes.io/name: selenium-firefox-node
@@ -390,7 +377,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-router
-  namespace: selenium-system
   labels: &router_labels
     app: selenium-router
     app.kubernetes.io/name: selenium-router
@@ -453,7 +439,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-session-map
-  namespace: selenium-system
   labels: &session_map_labels
     app: selenium-session-map
     app.kubernetes.io/name: selenium-session-map
@@ -488,7 +473,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: selenium-session-queuer
-  namespace: selenium-system
   labels: &session_queuer_labels
     app: selenium-session-queuer
     app.kubernetes.io/name: selenium-session-queuer
