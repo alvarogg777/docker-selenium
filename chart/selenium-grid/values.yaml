@@ -16,7 +16,7 @@ components:
     # Router image name
     imageName: selenium/router
     # Router image tag
-    imageTag: 4.0.0-beta-1-prerelease-20210114
+    imageTag: 4.0.0
     # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
     imagePullPolicy: IfNotPresent
     # Custom annotations for router pod
@@ -53,7 +53,7 @@ components:
     # Distributor image name
     imageName: selenium/distributor
     # Distributor image tag
-    imageTag: 4.0.0-beta-1-prerelease-20210114
+    imageTag: 4.0.0
     # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
     imagePullPolicy: IfNotPresent
     # Custom annotations for Distributor pod
@@ -72,7 +72,7 @@ components:
     # Event Bus image name
     imageName: selenium/event-bus
     # Event Bus image tag
-    imageTag: 4.0.0-beta-1-prerelease-20210114
+    imageTag: 4.0.0
     # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
     imagePullPolicy: IfNotPresent
     # Custom annotations for Event Bus pod
@@ -95,7 +95,7 @@ components:
     # Session Map image name
     imageName: selenium/sessions
     # Session Map image tag
-    imageTag: 4.0.0-beta-1-prerelease-20210114
+    imageTag: 4.0.0
     # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
     imagePullPolicy: IfNotPresent
     # Custom annotations for Session Map pod
@@ -113,7 +113,7 @@ components:
     # Session Queuer image name
     imageName: selenium/session-queuer
     # Session Queuer image tag
-    imageTag: 4.0.0-beta-1-prerelease-20210114
+    imageTag: 4.0.0
     # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
     imagePullPolicy: IfNotPresent
     # Custom annotations for Session Queuer pod
@@ -141,7 +141,7 @@ hub:
   # Selenium Hub image name
   imageName: selenium/hub
   # Selenium Hub image tag
-  imageTag: 4.0.0-beta-1-prerelease-20210114
+  imageTag: 4.0.0
   # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
   imagePullPolicy: IfNotPresent
   # Custom annotations for Selenium Hub pod
@@ -195,7 +195,7 @@ chromeNode:
   # Image of chrome nodes
   imageName: selenium/node-chrome
   # Image of chrome nodes
-  imageTag: 4.0.0-beta-1-prerelease-20210114
+  imageTag: 4.0.0
   # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
   imagePullPolicy: IfNotPresent
   # Port list to enable on container
@@ -234,7 +234,7 @@ firefoxNode:
   # Image of firefox nodes
   imageName: selenium/node-firefox
   # Image of firefox nodes
-  imageTag: 4.0.0-beta-1-prerelease-20210114
+  imageTag: 4.0.0
   # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
   imagePullPolicy: IfNotPresent
   # Port list to enable on container
@@ -273,7 +273,7 @@ operaNode:
   # Image of opera nodes
   imageName: selenium/node-opera
   # Image of opera nodes
-  imageTag: 4.0.0-beta-1-prerelease-20210114
+  imageTag: 4.0.0
   # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
   imagePullPolicy: IfNotPresent
   ports:
