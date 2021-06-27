@@ -10,5 +10,5 @@ max-sessions = 1
 
 [[node.driver-configuration]]
 name = "chrome"
-stereotype = '{"browserName": "chromium", "browserVersion": "91.0", "platformName": "Linux"}'
+stereotype = '{"browserName": "chrome", "browserVersion": "91.0", "platformName": "Linux"}'
 max-sessions = 1
