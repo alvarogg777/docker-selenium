@@ -23,3 +23,5 @@ RUN apt-get update -qqy \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/* && echo "chromium" >> /opt/selenium/browser_name
 
 USER 1200
+
+COPY config.toml /opt/selenium/config.toml

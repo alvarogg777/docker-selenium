@@ -1,0 +1,14 @@
+[events]
+publish = "tcp://selenium-event-bus:4442"
+subscribe = "tcp://selenium-event-bus:4443"
+
+[node]
+session-timeout = "300"
+override-max-sessions = false
+detect-drivers = false
+max-sessions = 1
+
+[[node.driver-configuration]]
+name = "chrome"
+stereotype = '{"browserName": "chromium", "browserVersion": "91.0", "platformName": "Linux"}'
+max-sessions = 1
