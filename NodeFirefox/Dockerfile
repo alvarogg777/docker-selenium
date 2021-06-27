@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-base:4.0.0-beta-4-20210610
+FROM alvarogg777/node-base:4.0.0-beta-4-20210627
 LABEL authors=SeleniumHQ
 
 USER root
@@ -14,13 +14,13 @@ RUN apt-get update -qqy \
   && apt-get -qqy install firefox-esr libavcodec-extra \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-ARG TARGETARCH
+ARG TARGETPLATFORM
 
 #============
 # GeckoDriver
 #============
 # For arm64 we're sniffing a compatible binary out of an ubuntu package, don't look too hard!
-RUN if [ "$(TARGETARCH)" = "arm64" ]; then \
+RUN if [ "$TARGETPLATFORM" = "arm64" ]; then \
     curl http://ports.ubuntu.com/pool/universe/f/firefox/firefox-geckodriver_75.0+build3-0ubuntu1_arm64.deb | dpkg-deb --fsys-tarfile - | tar -C / -x ./usr/bin/geckodriver; \
   else \
     wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.29.1/geckodriver-v0.29.1-linux64.tar.gz \
@@ -33,3 +33,4 @@ RUN if [ "$(TARGETARCH)" = "arm64" ]; then \
   fi
 
 USER 1200
+COPY config.toml /opt/selenium/config.toml

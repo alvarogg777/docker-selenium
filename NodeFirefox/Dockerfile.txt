@@ -26,3 +26,4 @@ RUN if [ "$TARGETPLATFORM" = "arm64" ]; then \
   fi
 
 USER 1200
+COPY config.toml /opt/selenium/config.toml

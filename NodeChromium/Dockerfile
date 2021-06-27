@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-base:4.0.0-beta-4-20210610
+FROM alvarogg777/node-base:4.0.0-beta-4-20210627
 LABEL authors=SeleniumHQ
 
 USER root
@@ -30,3 +30,5 @@ RUN apt-get update -qqy \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/* && echo "chromium" >> /opt/selenium/browser_name
 
 USER 1200
+
+COPY config.toml /opt/selenium/config.toml
