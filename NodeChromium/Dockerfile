@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-base:4.0.0-beta-4-20210627
+FROM alvarogg777/node-base:4.0.0-rc-1-20210903
 LABEL authors=SeleniumHQ
 
 USER root
@@ -27,7 +27,7 @@ RUN /opt/bin/wrap_chromium_binary
 #============================================
 RUN apt-get update -qqy \
   && apt-get -qqy install chromium-driver \
-  && rm -rf /var/lib/apt/lists/* /var/cache/apt/* && echo "chromium" >> /opt/selenium/browser_name
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/* ; ln -s /usr/bin/chromium /usr/bin/chrome ; echo "chrome" >> /opt/selenium/browser_name
 
 USER 1200
 

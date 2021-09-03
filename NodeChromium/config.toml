@@ -11,4 +11,4 @@ max-sessions = 1
 [[node.driver-configuration]]
 name = "chrome"
 stereotype = '{"browserName": "chrome", "browserVersion": "91.0", "platformName": "Linux"}'
-max-sessions = 1
+max-sessions = 25
