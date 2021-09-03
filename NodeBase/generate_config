@@ -23,6 +23,16 @@ else
   echo "port = \"${SE_NODE_PORT}\"" >> /opt/selenium/config.toml
 fi
 
+
+SE_NODE_BROWSER_NAME=$(cat /opt/selenium/browser_name)
+if [[ "${SE_NODE_BROWSER_NAME}" == "chromium" ]]; then
+    SE_NODE_BROWSER_VERSION=$(short_version $(chromium --version | awk '{print $3}'))
+elif [[ "${SE_NODE_BROWSER_NAME}" == "firefox" ]]; then
+    SE_NODE_BROWSER_VERSION=$(short_version $(firefox --version | awk '{print $3}'))
+fi
+
+echo "display-name = \"${SE_NODE_BROWSER_NAME}\"" >> /opt/selenium/config.toml
+
 echo "[node]
 max-concurrent-sessions = ${SE_NODE_MAX_CONCURRENT_SESSIONS}
 " >> /opt/selenium/config.toml

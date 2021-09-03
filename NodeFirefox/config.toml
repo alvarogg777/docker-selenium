@@ -11,4 +11,5 @@ max-sessions = 1
 [[node.driver-configuration]]
 name = "firefox"
 stereotype = '{"browserName": "firefox", "browserVersion": "78.11", "platformName": "Linux"}'
+display-name = "firefox"
 max-sessions = 25
