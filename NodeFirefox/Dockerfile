@@ -34,4 +34,3 @@ RUN if [ "$TARGETPLATFORM" = "arm64" ]; then \
 
 USER 1200
 COPY config.toml /opt/selenium/config.toml
-RUN echo "firefox" >> /opt/selenium/browser_name

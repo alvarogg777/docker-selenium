@@ -1,7 +1,7 @@
 NAME := $(or $(NAME),$(NAME),alvarogg777)
 CURRENT_DATE := $(shell date '+%Y%m%d')
 BUILD_DATE := $(or $(BUILD_DATE),$(BUILD_DATE),$(CURRENT_DATE))
-VERSION := $(or $(VERSION),$(VERSION),4.0.0-rc-1)
+VERSION := $(or $(VERSION),$(VERSION),4.0.0-rc-2-prerelease-20210907)
 TAG_VERSION := $(VERSION)-$(BUILD_DATE)
 NAMESPACE := $(or $(NAMESPACE),$(NAMESPACE),$(NAME))
 AUTHORS := $(or $(AUTHORS),$(AUTHORS),SeleniumHQ)

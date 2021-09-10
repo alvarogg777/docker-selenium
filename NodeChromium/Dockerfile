@@ -27,7 +27,7 @@ RUN /opt/bin/wrap_chromium_binary
 #============================================
 RUN apt-get update -qqy \
   && apt-get -qqy install chromium-driver \
-  && rm -rf /var/lib/apt/lists/* /var/cache/apt/* ; ln -s /usr/bin/chromium /usr/bin/chrome ;
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/* ; ln -s /usr/bin/chromium /usr/bin/chrome ; 
 
 USER 1200
 
