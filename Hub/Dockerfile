@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/base:4.0.0-rc-1-20210903
+FROM alvarogg777/base:4.0.0-20211013
 LABEL authors=SeleniumHQ
 
 USER 1200

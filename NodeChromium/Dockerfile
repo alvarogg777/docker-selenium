@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-base:4.0.0-rc-1-20210903
+FROM alvarogg777/node-base:4.0.0-20211013
 LABEL authors=SeleniumHQ
 
 USER root
@@ -13,7 +13,7 @@ USER root
 #============================================
 RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >> /etc/apt/sources.list \
   && apt-get update -qqy \
-  && apt-get -qqy install chromium=90.0.4430.212-1 \
+  && apt-get -qqy install chromium=93.0.4577.82-1 \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 #=================================
