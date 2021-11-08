@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-base:4.0.0-20211013
+FROM alvarogg777/node-base:4.0.0-20211108
 LABEL authors=SeleniumHQ
 
 USER root
@@ -22,7 +22,7 @@ ARG TARGETPLATFORM
 # For arm64 we're sniffing a compatible binary out of an ubuntu package, don't look too hard!
 # curl http://ports.ubuntu.com/pool/universe/f/firefox/firefox-geckodriver_75.0+build3-0ubuntu1_arm64.deb | dpkg-deb --fsys-tarfile - | tar -C / -x ./usr/bin/geckodriver; \
 RUN if [ "$TARGETPLATFORM" = "arm64" ]; then \
-    curl http://ports.ubuntu.com/pool/universe/f/firefox/firefox-geckodriver_93.0+build1-0ubuntu3_arm64.deb | dpkg-deb --fsys-tarfile - | tar -C / -x ./usr/bin/geckodriver; \
+    curl http://ports.ubuntu.com/pool/universe/f/firefox/firefox-geckodriver_94.0+build3-0ubuntu0.20.04.1_arm64.deb | dpkg-deb --fsys-tarfile - | tar -C / -x ./usr/bin/geckodriver; \
   else \
     wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz \
     && rm -rf /opt/geckodriver \

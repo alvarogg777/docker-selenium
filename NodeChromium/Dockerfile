@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-base:4.0.0-20211013
+FROM alvarogg777/node-base:4.0.0-20211108
 LABEL authors=SeleniumHQ
 
 USER root
@@ -11,8 +11,13 @@ USER root
 # Chromium
 # Obtain Chromium version from: https://packages.debian.org/search?keywords=chromium
 #============================================
-RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >> /etc/apt/sources.list \
-  && apt-get update -qqy \
+
+RUN apt-get -qqy update && apt-get install -y locales; locale-gen en_US.UTF-8 && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+ENV LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+
+#RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >> /etc/apt/sources.list \
+#  && apt-get update -qqy \
+RUN apt-get update -qqy \
   && apt-get -qqy install chromium=93.0.4577.82-1 \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 

@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/node-firefox:4.0.0-20211013
+FROM alvarogg777/node-firefox:4.0.0-20211108
 LABEL authors=SeleniumHQ
 
 USER 1200

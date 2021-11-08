@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM alvarogg777/base:4.0.0-20211013
+FROM alvarogg777/base:4.0.0-20211108
 LABEL authors=SeleniumHQ
 
 USER root
@@ -103,6 +103,7 @@ RUN  wget -nv -O noVNC.zip \
       "https://github.com/novnc/websockify/archive/${WEBSOCKIFY_SHA}.zip" \
   && unzip -x websockify.zip \
   && rm websockify.zip \
+  && rm -rf websockify-${WEBSOCKIFY_SHA}/tests \
   && mv websockify-${WEBSOCKIFY_SHA} /opt/bin/noVNC/utils/websockify
 
 #===================================================
@@ -134,9 +135,9 @@ RUN mkdir -p ${HOME}/.vnc \
 #==========
 # Relaxing permissions for OpenShift and other non-sudo environments
 #==========
-RUN sudo chmod -R 777 ${HOME} \
-  && sudo chgrp -R 0 ${HOME} \
-  && sudo chmod -R g=u ${HOME}
+#RUN chmod -R 777 ${HOME} \
+#  && chgrp -R 0 ${HOME} \
+#  && chmod -R g=u ${HOME}
 
 #==============================
 # Scripts to run fluxbox, x11vnc and noVNC
@@ -161,6 +162,9 @@ ENV DISPLAY :99.0
 ENV DISPLAY_NUM 99
 ENV START_XVFB true
 ENV START_NO_VNC true
+# Path to the Configfile
+ENV CONFIG_FILE=/opt/selenium/config.toml
+ENV GENERATE_CONFIG true
 
 #========================
 # Selenium Configuration
@@ -176,7 +180,8 @@ ENV SE_NODE_OVERRIDE_MAX_SESSIONS false
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 # Creating base directory for Xvfb
-RUN  sudo mkdir -p /tmp/.X11-unix && sudo chmod 1777 /tmp/.X11-unix
+# RUN  sudo mkdir -p /tmp/.X11-unix && sudo chmod 1777 /tmp/.X11-unix
+RUN  mkdir -p /tmp/.X11-unix
 
 # Copying configuration script generator
 COPY generate_config /opt/bin/generate_config

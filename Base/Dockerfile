@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:sid
 LABEL authors="Selenium <selenium-developers@googlegroups.com>"
 
 ARG TARGETARCH
@@ -11,6 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # Miscellaneous packages
 # Includes minimal runtime used for executing non GUI Java programs
 #========================
+# RUN apt-get -qqy update && apt-get -qqy install apt-utils  && rm -rf /var/lib/apt/lists/* /var/cache/apt/* 
 RUN apt-get -qqy update \
   && apt-get -qqy --no-install-recommends install \
     bzip2 \
@@ -65,7 +66,7 @@ COPY supervisord.conf /etc
 RUN  mkdir -p /opt/selenium /opt/selenium/assets /var/run/supervisor /var/log/supervisor \
   && touch /opt/selenium/config.toml \
   && chmod -R 777 /opt/selenium /opt/selenium/assets /var/run/supervisor /var/log/supervisor /etc/passwd \
-  && wget --no-verbose https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.0.0/selenium-server-4.0.0.jar \
+  && wget --no-verbose https://github.com/SeleniumHQ/docker-selenium/releases/download/4.1.0-prerelease-20211105/selenium-server-4.1.0-prerelease-aea69daa1c.jar \
      -O /opt/selenium/selenium-server.jar \
   && chgrp -R 0 /opt/selenium ${HOME} /opt/selenium/assets /var/run/supervisor /var/log/supervisor \
   && chmod -R g=u /opt/selenium ${HOME} /opt/selenium/assets /var/run/supervisor /var/log/supervisor
